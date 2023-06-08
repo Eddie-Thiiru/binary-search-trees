@@ -18,7 +18,7 @@ const buildTree = (arr, start, end) => {
   if (start > end) {
     return null;
   }
-  // parseInt to remove decimal places
+
   const mid = parseInt((start + end) / 2);
 
   let node = Node(arr[mid]);
@@ -39,7 +39,7 @@ const mergeSort = (arr) => {
   if (arr.length < 2) {
     return arr;
   }
-  // Divide array in half
+
   const mid = arr.length / 2;
 
   let left = arr.slice(0, mid);
@@ -167,7 +167,6 @@ const levelOrderData = (node) => {
   let value = node.data;
 };
 
-// Returns array of values for level-order traversal
 const levelOrder = (callback, node = tree) => {
   if (node === null) {
     return node;
@@ -207,7 +206,6 @@ const levelOrder = (callback, node = tree) => {
   }
 };
 
-// Returns array of values for preorder traversal
 const preorder = (callback, node = tree) => {
   let dataArr = [];
 
@@ -235,7 +233,6 @@ const preorder = (callback, node = tree) => {
   }
 };
 
-// Returns array of values for inorder traversal
 const inorder = (callback, node = tree) => {
   let dataArr = [];
 
@@ -264,7 +261,6 @@ const inorder = (callback, node = tree) => {
   }
 };
 
-// Returns array of values for postorder traversal
 const postorder = (callback, node = tree) => {
   let dataArr = [];
 
@@ -355,7 +351,6 @@ const rebalance = () => {
   tree = Tree(array);
 };
 
-// Visualize binary search tree in a structured format
 const prettyPrint = (node, prefix = "", isLeft = true) => {
   if (node === null) {
     return;
@@ -382,20 +377,19 @@ const randomNumbers = (num) => {
 
 let randomArray = randomNumbers(10);
 let sortArray = mergeSort(randomArray);
-
-// This calls buildTree()
 let tree = Tree(sortArray);
 
 // Check if the tree is balanced
 console.log("Balanced:", isBalanced());
 
-// These print out elements using specified traversal methods
+// Print out elements in their respective traversal methods
 console.log("Level order: ", levelOrder());
 console.log("Preorder: ", preorder());
 console.log("Postorder: ", postorder());
 console.log("Inorder: ", inorder());
 
 console.log("Tree unbalanced!");
+
 // Unbalances tree
 insert(999);
 insert(120);
@@ -417,7 +411,7 @@ prettyPrint(tree);
 // Check if the tree is balanced
 console.log("Balanced:", isBalanced());
 
-// These print out elements using specified traversal methods
+// Print out elements in their respective traversal methods
 console.log("Level order: ", levelOrder());
 console.log("Preorder: ", preorder());
 console.log("Postorder: ", postorder());
